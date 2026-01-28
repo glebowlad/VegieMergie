@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5edd425a48eb2e429e7f012ee9d6526
+guid: a5a2b3a37ed793742bf918946f6e33c4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,11 +35,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: 2
+    aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -53,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0.02
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -65,11 +65,11 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -82,20 +82,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -108,20 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -135,11 +109,46 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
+    outline:
+    - - {x: 601.1596, y: -99.72656}
+      - {x: 479.7716, y: 119.96094}
+      - {x: 131.50366, y: 391.6797}
+      - {x: 140.17424, y: 526.09375}
+      - {x: 140.17424, y: 656.1719}
+      - {x: 105.49195, y: 672.0703}
+      - {x: -57.80381, y: 672.0703}
+      - {x: -195.08786, y: 348.3203}
+      - {x: -582.37335, y: 30.351562}
+      - {x: -595.3792, y: -43.359375}
+      - {x: -595.3792, y: -280.39062}
+      - {x: -591.04395, y: -323.75}
+      - {x: -533.2401, y: -416.25}
+      - {x: -345.37775, y: -533.3203}
+      - {x: -153.1801, y: -611.3672}
+      - {x: 183.5271, y: -611.3672}
+      - {x: 495.66766, y: -492.85156}
+      - {x: 576.593, y: -436.48438}
+      - {x: 601.1596, y: -348.3203}
+    - - {x: -216.76428, y: -569.4531}
+      - {x: -212.429, y: -568.0078}
+      - {x: -212.429, y: -563.6719}
+      - {x: -216.76428, y: -562.22656}
+      - {x: -219.65448, y: -565.1172}
+    - - {x: -277.45828, y: -536.21094}
+      - {x: -276.01318, y: -540.5469}
+      - {x: -271.67792, y: -540.5469}
+      - {x: -268.78772, y: -537.65625}
+      - {x: -270.23282, y: -533.3203}
+      - {x: -274.56808, y: -533.3203}
+    - - {x: -523.12445, y: -422.03125}
+      - {x: -518.7892, y: -420.58594}
+      - {x: -518.7892, y: -416.25}
+      - {x: -523.12445, y: -414.8047}
+      - {x: -526.01465, y: -417.6953}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
