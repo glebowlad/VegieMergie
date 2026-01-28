@@ -10,6 +10,10 @@ TagManager:
   - Item4
   - Item5
   - Item6
+  - Item7
+  - Item8
+  - Item9
+  - Item10
   layers:
   - Default
   - TransparentFX

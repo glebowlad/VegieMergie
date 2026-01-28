@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 4884683387980380290}
   - component: {fileID: 4420354329971903068}
   - component: {fileID: 5698228113850057628}
-  - component: {fileID: 7859615362575542053}
+  - component: {fileID: 8405497626818402125}
   m_Layer: 5
-  m_Name: Item5
-  m_TagString: Item5
+  m_Name: Item10
+  m_TagString: Item10
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1718294166556832814
 CanvasRenderer:
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.73424804, g: 0.20710216, b: 0.8443396, a: 1}
+  m_Color: {r: 1, g: 0.38016793, b: 0.042452812, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -114,7 +114,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 66
+  m_Radius: 180
 --- !u!50 &4884683387980380290
 Rigidbody2D:
   serializedVersion: 4
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c79bf399db8941478feae0e4d88b029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelItem: {fileID: 6008126811829159264, guid: a6e8deb81dec3584d965a9baf47be203, type: 3}
+  nextLevelItem: {fileID: 0}
 --- !u!114 &5698228113850057628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815e0ca9350d0b4d938b7bd60e27e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7859615362575542053
+--- !u!114 &8405497626818402125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
