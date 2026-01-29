@@ -44,6 +44,8 @@ public class Merge : MonoBehaviour
         Destroy(gameObject);
         
         GameObject newItem = Instantiate(nextLevelItem, transform.position, Quaternion.identity, canvas.transform);
+        ParticleSystem newItemEffect=newItem.GetComponentInChildren<ParticleSystem>();
+        newItemEffect.Play();
         Rigidbody2D newItemRB = newItem.GetComponent<Rigidbody2D>();
         newItemRB.simulated=true;
 

@@ -8,7 +8,6 @@ public class VegetableDrag : MonoBehaviour
 
     private Drag drag;
     private Rigidbody2D rigidbody;
-    private float force = 600f;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
