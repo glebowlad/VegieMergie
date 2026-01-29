@@ -64,7 +64,7 @@ public void OnBeginDrag(PointerEventData eventData)
         Vector2 rightWallLocal = canvas.transform.InverseTransformPoint(rightWall.position);
 
         // Учитываем половину ширины объекта
-        float halfWidth = rectTransform.rect.width / 2f;
+        float halfWidth = rectTransform.rect.width / 3f;
 
         // Ограничиваем движение
         float clampedX = Mathf.Clamp(
@@ -82,31 +82,7 @@ public void OnBeginDrag(PointerEventData eventData)
 
 
 
-        //float mouseX = Input.mousePosition.x;
-        //float clampedX = Mathf.Clamp(mouseX, minX, maxX);
-        //RectTransformUtility.ScreenPointToWorldPointInRectangle(rectTransform,
-        //    new Vector2(clampedX, Input.mousePosition.y),
-        //    canvas.worldCamera,
-        //    out Vector3 worldPos
-        //);
-
-        //worldPos.y = transform.position.y;
-        //worldPos.z = transform.position.z;
-
-        //transform.position = worldPos;
-
-
-
-
-        //var pos=transform.position;
-        //if (Input.mousePosition.x < minX)
-        //{ pos.x = minX; }
-        //else if (Input.mousePosition.x > maxX)
-        //{ pos.x = maxX; }
-        //else
-        //{ pos.x = Input.mousePosition.x;}
-
-        //transform.position = pos;
+       
     }
     public void OnEndDrag(PointerEventData eventData)
     {
