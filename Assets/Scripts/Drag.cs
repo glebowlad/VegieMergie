@@ -37,9 +37,9 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         Vector2 rightWallScreenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera,rightWall.position);
         Vector2 selfScreenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera,transform.position);
 
-       float halfWidth = (rectTransform.rect.width * canvas.scaleFactor) / 2f;
-        minX = leftWallScreenPos.x + halfWidth;
-        maxX = rightWallScreenPos.x - halfWidth;
+       float Width = (rectTransform.rect.width * canvas.scaleFactor)/2f;
+        minX = leftWallScreenPos.x + Width;
+        maxX = rightWallScreenPos.x - Width;
 
     
     }
@@ -64,7 +64,7 @@ public void OnBeginDrag(PointerEventData eventData)
         Vector2 rightWallLocal = canvas.transform.InverseTransformPoint(rightWall.position);
 
         // Учитываем половину ширины объекта
-        float halfWidth = rectTransform.rect.width / 1.5f;
+        float halfWidth = rectTransform.rect.width / 2f;
 
         // Ограничиваем движение
         float clampedX = Mathf.Clamp(
