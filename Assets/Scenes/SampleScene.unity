@@ -497,8 +497,8 @@ Canvas:
   m_GameObject: {fileID: 1637013300}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -657,6 +657,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1637013304}
     m_Modifications:
+    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
+      propertyPath: vegPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
+      propertyPath: vegPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6008126811829159264, guid: 20e1f7ef70f6e0743bbf97515a09d23d, type: 3}
+    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
+      propertyPath: vegPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6008126811829159264, guid: ed3f5130510953f47873e26a797ffe01, type: 3}
+    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
+      propertyPath: vegPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 6008126811829159264, guid: 579f38f81e4e0e14683fa4e1d5c4e3bc, type: 3}
     - target: {fileID: 2066061898345966611, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

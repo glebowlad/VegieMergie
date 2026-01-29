@@ -37,7 +37,6 @@ public class VegetableDrag : MonoBehaviour
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         rigidbody.simulated = true;
-        rigidbody.AddForce(-transform.up* force,ForceMode2D.Impulse);
         if (drag != null)
         {
             drag.WhileDrag -= OnDrag;
