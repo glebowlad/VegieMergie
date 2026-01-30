@@ -12,14 +12,15 @@ public class VegetableDrag : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.simulated = false;
-       drag = GetComponentInParent<Drag>(); 
+      // drag = GetComponentInParent<Drag>(); 
     }
-    void Start()
+    //void Start()
+    //{
+    //    Subscribe(drag);
+    //}
+    public void Subscribe(Drag _drag)
     {
-        Subscribe(drag);
-    }
-    void Subscribe(Drag _drag)
-    {
+        drag = _drag;
         if (drag!= null)
         {
             drag.WhileDrag += OnDrag;

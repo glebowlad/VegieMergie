@@ -659,7 +659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: vegPrefabs.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: vegPrefabs.Array.data[0]

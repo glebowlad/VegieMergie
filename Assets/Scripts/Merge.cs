@@ -8,10 +8,11 @@ public class Merge : MonoBehaviour
     private Canvas canvas;
     private bool isMerging = false;
     private GameObject otherItem;
-    
+    private PrefabPool pool;
 
     private void Awake()
     {
+        pool= new PrefabPool(nextLevelItem);
         canvas = GetComponentInParent<Canvas>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -40,10 +41,13 @@ public class Merge : MonoBehaviour
         isMerging= true;
         yield return new WaitForSeconds(0.05f);
         otherItem.GetComponent<Merge>().isMerging = true;
-        Destroy(otherItem.gameObject);
-        Destroy(gameObject);
+        GameObject newItem = pool.Get();
+        newItem.transform.SetParent(transform.parent, false);
+        newItem.transform.position = transform.position;
+        pool.Release(otherItem);
+        pool.Release(gameObject);
         
-        GameObject newItem = Instantiate(nextLevelItem, transform.position, Quaternion.identity, canvas.transform);
+            //Instantiate(nextLevelItem, transform.position, Quaternion.identity, canvas.transform);
         ParticleSystem newItemEffect=newItem.GetComponentInChildren<ParticleSystem>();
         newItemEffect.Play();
         Rigidbody2D newItemRB = newItem.GetComponent<Rigidbody2D>();
