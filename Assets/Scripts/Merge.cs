@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class Merge : MonoBehaviour
     private bool isMerging = false;
     private GameObject otherItem;
     private PrefabPool pool;
-
+    public event Action Merged;
     private void Awake()
     {
         pool= new PrefabPool(nextLevelItem);
@@ -42,8 +43,10 @@ public class Merge : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         otherItem.GetComponent<Merge>().isMerging = true;
         GameObject newItem = pool.Get();
+        Merged?.Invoke();
         newItem.transform.SetParent(transform.parent, false);
         newItem.transform.position = transform.position;
+
         pool.Release(otherItem);
         pool.Release(gameObject);
         

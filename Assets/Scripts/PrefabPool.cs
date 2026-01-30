@@ -21,8 +21,6 @@ public class PrefabPool
     }
     public PrefabPool(GameObject[] prefabs, int prewarmObjectsCountPerPrefab)
     {
-
-        _singlePrefab = null;
         _prefabArray = prefabs;
         _random = new System.Random();
         int totalPrewarmCount = prewarmObjectsCountPerPrefab * prefabs.Length;
