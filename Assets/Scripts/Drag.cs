@@ -26,45 +26,46 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         spawnerWidth= rectTransform.rect.width;
         line = transform.GetChild(0);
         line.gameObject.SetActive(false);
-        CalculateLimits();
+       // CalculateLimits();
 
 
     }
 
-    private void CalculateLimits()
-    {
-        Vector2 leftWallScreenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera,leftWall.position);
-        Vector2 rightWallScreenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera,rightWall.position);
-        Vector2 selfScreenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera,transform.position);
+    //private void CalculateLimits()
+    //{
+    //    Vector2 leftWallScreenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera,leftWall.position);
+    //    Vector2 rightWallScreenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera,rightWall.position);
+    //    Vector2 selfScreenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera,transform.position);
 
-       float Width = (rectTransform.rect.width * canvas.scaleFactor)/2f;
-        minX = leftWallScreenPos.x + Width;
-        maxX = rightWallScreenPos.x - Width;
+    //   spawnerWidth = (rectTransform.rect.width * canvas.scaleFactor)/2f;
+    //    minX = leftWallScreenPos.x + spawnerWidth;
+    //    maxX = rightWallScreenPos.x - spawnerWidth;
+    //    Debug.Log($"minX {minX}");
+    //    Debug.Log($"maxX {maxX}");
+       
 
-    
-    }
+    //}
 public void OnBeginDrag(PointerEventData eventData)
     {
         DragBegined?.Invoke();
         line.gameObject.SetActive(true);
+       // CalculateLimits();
     }
     public void OnDrag(PointerEventData eventData)
     {
         WhileDrag?.Invoke();
-
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
         canvas.transform as RectTransform,
         eventData.position,
         canvas.worldCamera,
-        out Vector2 localPoint
-    );
-
+        out Vector2 localPoint);
         // Преобразуем позиции стен в локальные координаты канваса
         Vector2 leftWallLocal = canvas.transform.InverseTransformPoint(leftWall.position);
         Vector2 rightWallLocal = canvas.transform.InverseTransformPoint(rightWall.position);
-
+        Debug.Log($"Left {leftWallLocal}");
+        Debug.Log($"Right {rightWallLocal}");
         // Учитываем половину ширины объекта
-        float halfWidth = rectTransform.rect.width / 3f;
+        float halfWidth = rectTransform.rect.width/1.5f;
 
         // Ограничиваем движение
         float clampedX = Mathf.Clamp(

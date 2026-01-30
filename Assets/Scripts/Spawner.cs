@@ -27,13 +27,10 @@ public class Spawner : MonoBehaviour
     private IEnumerator SpawnTimer()
     {
         yield return new WaitForSeconds(0.4f);
-       // int randInd=UnityEngine.Random.Range(0, vegPrefabs.Length);
         itemToSpawn = pool.Get();
         itemToSpawn.transform.SetParent(transform,false);
         var itemDrag=itemToSpawn.GetComponent<VegetableDrag>();
         itemDrag.Subscribe(drag);
-        //var itemDrag =itemToSpawn.GetComponent<VegetableDrag>();
-            //Instantiate(vegPrefabs[randInd],transform.position, Quaternion.identity , transform);
         itemWidth= itemToSpawn.GetComponent<RectTransform>().rect.width;
         spawnerRect = gameObject.GetComponent<RectTransform>();
         spawnerRect.sizeDelta= new Vector2(itemWidth,spawnerRect.sizeDelta.y);

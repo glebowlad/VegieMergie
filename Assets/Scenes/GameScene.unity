@@ -540,6 +540,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1637013304}
     m_Modifications:
+    - target: {fileID: 875431312514939820, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Size.x
+      value: 119.361046
+      objectReference: {fileID: 0}
+    - target: {fileID: 875431312514939820, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Offset.x
+      value: -34.680515
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050075621690724153, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Size.x
+      value: 109.53885
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050075621690724153, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Offset.x
+      value: 29.769424
+      objectReference: {fileID: 0}
     - target: {fileID: 4341574783112696128, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_Name
       value: Space
@@ -547,6 +563,14 @@ PrefabInstance:
     - target: {fileID: 4811467070260640439, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_Size.x
       value: 1300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811467070260640439, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Size.y
+      value: 160.25095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811467070260640439, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Offset.y
+      value: -55.12549
       objectReference: {fileID: 0}
     - target: {fileID: 5714896329564074738, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -657,50 +681,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1637013304}
     m_Modifications:
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: 20e1f7ef70f6e0743bbf97515a09d23d, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: ed3f5130510953f47873e26a797ffe01, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: 579f38f81e4e0e14683fa4e1d5c4e3bc, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: a7a0f725c83a0174fafbf73d7eaa8881, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: 14111c74def9fc3408ea1b7b7ecf1441, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: 7e72c3bbe4a93e241a1efcc15bf118bf, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: a6e8deb81dec3584d965a9baf47be203, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[7]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: 530b162b214c47145a571297a0d87ebb, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[8]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: 48a0798a14ac2cb4481f73126b2c28bc, type: 3}
-    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
-      propertyPath: vegPrefabs.Array.data[9]
-      value: 
-      objectReference: {fileID: 6008126811829159264, guid: 8f9a8f9b5c62d894985e63e44f75ba93, type: 3}
     - target: {fileID: 2066061898345966611, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -731,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2066061898345966611, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2066061898345966611, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: m_LocalPosition.x
