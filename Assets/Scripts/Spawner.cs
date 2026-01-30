@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     private PrefabPool pool;
     private void Awake()
     {
+        spawnerRect = gameObject.GetComponent<RectTransform>();
         pool = new PrefabPool(vegPrefabs,10);
         drag = GetComponent<Drag>();
         Subscribe(drag);
@@ -32,7 +33,6 @@ public class Spawner : MonoBehaviour
         var itemDrag=itemToSpawn.GetComponent<VegetableDrag>();
         itemDrag.Subscribe(drag);
         itemWidth= itemToSpawn.GetComponent<RectTransform>().rect.width;
-        spawnerRect = gameObject.GetComponent<RectTransform>();
         spawnerRect.sizeDelta= new Vector2(itemWidth,spawnerRect.sizeDelta.y);
     }
     private void Subscribe(Drag _drag)

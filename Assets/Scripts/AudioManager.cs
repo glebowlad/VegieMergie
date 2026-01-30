@@ -11,9 +11,6 @@ public class AudioManager : MonoBehaviour
     private AudioClip dropSound;
     [SerializeField]
     private Drag drag;
-    //[SerializeField]
-    //private Merge merge;
-
     private AudioSource source;
 
     void Awake()
@@ -26,7 +23,7 @@ public class AudioManager : MonoBehaviour
     private void Subscribe()
     {
         drag.OnDragFinished += PlayDropSound;
-        //merge.Merged += PlayMergeSound;
+        Merge.Merged += PlayMergeSound;
     }
 
     private void PlayMergeSound()
@@ -36,8 +33,7 @@ public class AudioManager : MonoBehaviour
 
     private void PlayDropSound()
     {
-        source.clip = dropSound;
-        source.Play();
+        source.PlayOneShot(dropSound);
     }
     private void OnDestroy()
     {

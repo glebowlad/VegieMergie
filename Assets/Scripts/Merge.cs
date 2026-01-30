@@ -10,7 +10,7 @@ public class Merge : MonoBehaviour
     private bool isMerging = false;
     private GameObject otherItem;
     private PrefabPool pool;
-    public event Action Merged;
+    public static event Action Merged;
     private void Awake()
     {
         pool= new PrefabPool(nextLevelItem);
