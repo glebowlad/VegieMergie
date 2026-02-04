@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4884683387980380290}
   - component: {fileID: 4420354329971903068}
   - component: {fileID: 5698228113850057628}
-  - component: {fileID: 4043941282099186794}
   - component: {fileID: 838242416633118404}
   m_Layer: 5
   m_Name: Item6
@@ -133,119 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815e0ca9350d0b4d938b7bd60e27e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &4043941282099186794
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008126811829159264}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 70.710815, y: 42.177002}
-      - {x: 65.15698, y: 44.489746}
-      - {x: 61.464233, y: 48.416626}
-      - {x: 54.13208, y: 52.24939}
-      - {x: 43.5802, y: 53.569336}
-      - {x: 32.790527, y: 52.211914}
-      - {x: 31.046143, y: 53.738525}
-      - {x: 25.305054, y: 56.288086}
-      - {x: 17.630249, y: 57.25879}
-      - {x: 8.529175, y: 56.15808}
-      - {x: 10.016113, y: 63.139282}
-      - {x: 13.761597, y: 69.98706}
-      - {x: 18.363647, y: 73.831665}
-      - {x: 22.164185, y: 73.90442}
-      - {x: 29.0625, y: 72.27319}
-      - {x: 32.57788, y: 73.8042}
-      - {x: 35.438232, y: 77.35571}
-      - {x: 37.173462, y: 82.18274}
-      - {x: 36.747803, y: 87.67322}
-      - {x: 33.765015, y: 92.16443}
-      - {x: 29.339722, y: 95.24426}
-      - {x: 24.76001, y: 95.88367}
-      - {x: 16.639526, y: 92.77551}
-      - {x: 10.125732, y: 88.92505}
-      - {x: 2.4033203, y: 81.788574}
-      - {x: -4.272949, y: 73.31897}
-      - {x: -10.961182, y: 57.73169}
-      - {x: -19.781128, y: 57.312866}
-      - {x: -25.006348, y: 55.58362}
-      - {x: -29.685669, y: 52.378906}
-      - {x: -39.43286, y: 53.451904}
-      - {x: -46.90271, y: 52.702393}
-      - {x: -54.82715, y: 50.10974}
-      - {x: -60.561523, y: 46.46472}
-      - {x: -64.02881, y: 42.618774}
-      - {x: -66.69287, y: 41.762085}
-      - {x: -71.85547, y: 38.631714}
-      - {x: -78.81445, y: 31.720947}
-      - {x: -82.702515, y: 22.845459}
-      - {x: -84.63807, y: 13.772396}
-      - {x: -84.503296, y: 1.3950195}
-      - {x: -80.84595, y: -18.503662}
-      - {x: -66.35657, y: -58.2464}
-      - {x: -55.441772, y: -76.762634}
-      - {x: -50.93715, y: -81.248474}
-      - {x: -45.18103, y: -85.00043}
-      - {x: -39.929688, y: -87.72485}
-      - {x: -35.731934, y: -88.72235}
-      - {x: -29.346313, y: -89.47827}
-      - {x: -22.52246, y: -88.86426}
-      - {x: -16.82666, y: -92.566345}
-      - {x: -9.183838, y: -95.242615}
-      - {x: -0.9251709, y: -95.88422}
-      - {x: 6.8553467, y: -94.262695}
-      - {x: 14.132202, y: -90.54266}
-      - {x: 19.514282, y: -85.79254}
-      - {x: 32.116455, y: -88.09515}
-      - {x: 41.1604, y: -86.85608}
-      - {x: 48.463257, y: -83.76343}
-      - {x: 54.152588, y: -80.262085}
-      - {x: 59.37097, y: -75.762695}
-      - {x: 66.0309, y: -66.80524}
-      - {x: 74.381714, y: -46.77893}
-      - {x: 81.35901, y: -22.026367}
-      - {x: 84.69214, y: 4.704956}
-      - {x: 82.26184, y: 27.191406}
-      - {x: 78.71411, y: 33.90674}
-      - {x: 75.08607, y: 38.53729}
-  m_UseDelaunayMesh: 0
 --- !u!58 &838242416633118404
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -280,7 +166,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -12.08}
   serializedVersion: 2
-  m_Radius: 82.86
+  m_Radius: 77.9
 --- !u!1001 &1606917148729762203
 PrefabInstance:
   m_ObjectHideFlags: 0

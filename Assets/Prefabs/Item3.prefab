@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4884683387980380290}
   - component: {fileID: 4420354329971903068}
   - component: {fileID: 5698228113850057628}
-  - component: {fileID: 3978815650248571634}
   - component: {fileID: 5291030005689062808}
   m_Layer: 5
   m_Name: Item3
@@ -41,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160.2, y: 265.3}
+  m_SizeDelta: {x: 106.5, y: 130.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1718294166556832814
 CanvasRenderer:
@@ -71,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dac4a991b92d1284facb588c3d639556, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fa83dc234920084294d32148108354c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -133,105 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815e0ca9350d0b4d938b7bd60e27e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &3978815650248571634
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008126811829159264}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 43.960266, y: -35.663666}
-      - {x: 46.402832, y: -28.683167}
-      - {x: 47.053894, y: -18.837402}
-      - {x: 44.79608, y: -11.733948}
-      - {x: 40.96808, y: -5.1746826}
-      - {x: 37.91748, y: -1.800415}
-      - {x: 30.030022, y: 4.5507774}
-      - {x: 18.23407, y: 12.295898}
-      - {x: 12.739197, y: 17.845825}
-      - {x: 11.128235, y: 21.835327}
-      - {x: 10.88147, y: 25.01239}
-      - {x: 12.088928, y: 27.723755}
-      - {x: 12.871399, y: 29.364319}
-      - {x: 12.334473, y: 30.11554}
-      - {x: 11.056335, y: 29.974792}
-      - {x: 8.669922, y: 29.098022}
-      - {x: 10.58844, y: 34.360657}
-      - {x: 13.622559, y: 41.395935}
-      - {x: 14.934692, y: 46.91809}
-      - {x: 13.587524, y: 48.603577}
-      - {x: 11.8064575, y: 48.532043}
-      - {x: 8.564026, y: 45.54608}
-      - {x: 5.006958, y: 40.332764}
-      - {x: 6.470093, y: 55.52893}
-      - {x: 6.852539, y: 65.62482}
-      - {x: 5.472107, y: 67.48602}
-      - {x: 3.6607056, y: 67.038025}
-      - {x: 1.083252, y: 62.976196}
-      - {x: -1.6953125, y: 55.487488}
-      - {x: -3.4036865, y: 42.69641}
-      - {x: -8.139526, y: 53.600952}
-      - {x: -10.230408, y: 54.385986}
-      - {x: -12.116333, y: 52.61444}
-      - {x: -12.56543, y: 48.26294}
-      - {x: -11.576111, y: 42.1709}
-      - {x: -6.8234863, y: 27.58258}
-      - {x: -11.263184, y: 30.16565}
-      - {x: -12.337769, y: 29.47705}
-      - {x: -10.38446, y: 24.451233}
-      - {x: -11.324646, y: 20.37793}
-      - {x: -15.002808, y: 15.090149}
-      - {x: -32.83972, y: 2.105835}
-      - {x: -40.520325, y: -5.546875}
-      - {x: -45.094666, y: -12.761902}
-      - {x: -46.558426, y: -21.099117}
-      - {x: -46.441345, y: -28.278748}
-      - {x: -44.24475, y: -34.20105}
-      - {x: -38.64154, y: -40.777924}
-      - {x: -30.412659, y: -46.892}
-      - {x: -21.094727, y: -51.144318}
-      - {x: -12.439453, y: -52.79773}
-      - {x: 4.511369, y: -54.414425}
-      - {x: 25.18872, y: -49.794525}
-      - {x: 39.354073, y: -41.1832}
-  m_UseDelaunayMesh: 0
 --- !u!58 &5291030005689062808
 CircleCollider2D:
   m_ObjectHideFlags: 0
