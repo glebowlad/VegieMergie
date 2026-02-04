@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 5698228113850057628}
   - component: {fileID: 838242416633118404}
   m_Layer: 5
-  m_Name: Item6
-  m_TagString: Item6
+  m_Name: Item7
+  m_TagString: Item7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 305.1, y: 395.4}
+  m_SizeDelta: {x: 234.36, y: 277.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1718294166556832814
 CanvasRenderer:
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec6d6c21ac7425844a22d5cc00c98263, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3da77ae6571563144b671a90e7fa6e65, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c79bf399db8941478feae0e4d88b029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelItem: {fileID: 6008126811829159264, guid: 0c365c7c5edf9bb4fb03943f9aca3d60, type: 3}
+  nextLevelItem: {fileID: 6008126811829159264, guid: 48a0798a14ac2cb4481f73126b2c28bc, type: 3}
 --- !u!114 &5698228113850057628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,9 +164,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -12.08}
+  m_Offset: {x: 0, y: -5.4}
   serializedVersion: 2
-  m_Radius: 77.9
+  m_Radius: 81.7
 --- !u!1001 &1606917148729762203
 PrefabInstance:
   m_ObjectHideFlags: 0
