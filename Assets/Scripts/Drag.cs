@@ -62,8 +62,8 @@ public void OnBeginDrag(PointerEventData eventData)
         // Преобразуем позиции стен в локальные координаты канваса
         Vector2 leftWallLocal = canvas.transform.InverseTransformPoint(leftWall.position);
         Vector2 rightWallLocal = canvas.transform.InverseTransformPoint(rightWall.position);
-        Debug.Log($"Left {leftWallLocal}");
-        Debug.Log($"Right {rightWallLocal}");
+        //Debug.Log($"Left {leftWallLocal}");
+        //Debug.Log($"Right {rightWallLocal}");
         // Учитываем половину ширины объекта
         float halfWidth = rectTransform.rect.width/1.5f;
 
