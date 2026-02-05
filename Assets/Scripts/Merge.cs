@@ -40,12 +40,12 @@ public class Merge : MonoBehaviour
     private IEnumerator CreateNewItem()
     {
         isMerging= true;
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         otherItem.GetComponent<Merge>().isMerging = true;
         GameObject newItem = pool.Get();
         Merged?.Invoke();
         newItem.transform.SetParent(transform.parent, false);
-        newItem.transform.position = transform.position;
+        newItem.transform.position = (transform.position+otherItem.transform.position)/2f;
 
         pool.Release(otherItem);
         pool.Release(gameObject);
