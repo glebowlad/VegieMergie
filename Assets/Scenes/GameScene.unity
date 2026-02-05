@@ -734,6 +734,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 0007aec6b5396ed488f4cea311337338, type: 2}
+    - target: {fileID: 5714896329564074738, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 290
+      objectReference: {fileID: 0}
     - target: {fileID: 5768055894667399829, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -814,11 +818,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6638414668630593532, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Name
+      value: GameOverLine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+--- !u!1 &1247235875534718320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6638414668630593532, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+  m_PrefabInstance: {fileID: 1247235875534718319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6976633438015944799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -827,6 +840,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1637013304}
     m_Modifications:
+    - target: {fileID: 371060019022667868, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
+      propertyPath: gameOverLine
+      value: 
+      objectReference: {fileID: 1247235875534718320}
+    - target: {fileID: 1953412048020365816, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 687.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953412048020365816, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -386.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2066061898345966611, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -893,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2066061898345966611, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 390.34
+      value: 390.21
       objectReference: {fileID: 0}
     - target: {fileID: 2066061898345966611, guid: 974ab3270105cdf479d3f23aeb23b403, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

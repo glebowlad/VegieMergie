@@ -12,6 +12,9 @@ public class Spawner : MonoBehaviour
     private RectTransform spawnerRect;
     private Drag drag;
     private PrefabPool pool;
+    [SerializeField]
+    private GameObject gameOverLine;
+
     private void Awake()
     {
         spawnerRect = gameObject.GetComponent<RectTransform>();
@@ -23,7 +26,23 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        StartCoroutine(SpawnTimer());
+        if (itemToSpawn != null )
+        {
+            StartCoroutine(CheckGameOver());
+            //return;
+        }
+            StartCoroutine(SpawnTimer());
+
+        
+    }
+
+    private IEnumerator CheckGameOver()
+    {
+        yield return new WaitForSeconds(0.4f);
+        if(itemToSpawn.transform.position.y > gameOverLine.transform.position.y)
+        {
+            Debug.Log("GAME OVER");
+        }
     }
     private IEnumerator SpawnTimer()
     {
