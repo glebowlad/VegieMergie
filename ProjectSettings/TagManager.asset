@@ -51,6 +51,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
+  - name: Veg
     uniqueID: 3633169607
+    locked: 0
+  - name: Effect
+    uniqueID: 3922989459
     locked: 0
