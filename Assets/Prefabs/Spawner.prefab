@@ -61,7 +61,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vegPrefabs:
+  - {fileID: 6008126811829159264, guid: b9df0ac4801ca70499059e7e5491f8a6, type: 3}
   - {fileID: 6008126811829159264, guid: 300b5da288f267749a6b09e681beb611, type: 3}
+  - {fileID: 6008126811829159264, guid: e56c770979c398743ba747f7add9bd74, type: 3}
   gameOverLine: {fileID: 0}
 --- !u!114 &2706150352772572661
 MonoBehaviour:
@@ -115,6 +117,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2066061898345966611}
     m_Modifications:
+    - target: {fileID: 6443790175838278084, guid: a51a2983d44c09a4787611cb30719d1d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 687.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443790175838278084, guid: a51a2983d44c09a4787611cb30719d1d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -386.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6866301037583513820, guid: a51a2983d44c09a4787611cb30719d1d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
