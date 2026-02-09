@@ -61,11 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vegPrefabs:
-  - {fileID: 6008126811829159264, guid: 20e1f7ef70f6e0743bbf97515a09d23d, type: 3}
-  - {fileID: 6008126811829159264, guid: ed3f5130510953f47873e26a797ffe01, type: 3}
-  - {fileID: 6008126811829159264, guid: 579f38f81e4e0e14683fa4e1d5c4e3bc, type: 3}
-  - {fileID: 6008126811829159264, guid: a7a0f725c83a0174fafbf73d7eaa8881, type: 3}
-  - {fileID: 6008126811829159264, guid: 14111c74def9fc3408ea1b7b7ecf1441, type: 3}
+  - {fileID: 6008126811829159264, guid: 300b5da288f267749a6b09e681beb611, type: 3}
+  gameOverLine: {fileID: 0}
 --- !u!114 &2706150352772572661
 MonoBehaviour:
   m_ObjectHideFlags: 0
