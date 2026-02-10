@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class Merge : MonoBehaviour
@@ -11,6 +12,10 @@ public class Merge : MonoBehaviour
     private GameObject otherItem;
     private PrefabPool pool;
     public static event Action Merged;
+
+    private static int mergedItemsCounter=0;
+    public int scoreCounter = 0;
+    private static int totalScore=0;
     private void Awake()
     {
         pool= new PrefabPool(nextLevelItem);
@@ -43,6 +48,12 @@ public class Merge : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         otherItem.GetComponent<Merge>().isMerging = true;
         GameObject newItem = pool.Get();
+        mergedItemsCounter++;
+        scoreCounter = (int)Math.Pow(2, Array.IndexOf(InternalEditorUtility.tags, newItem.tag)-8);
+        totalScore += scoreCounter;
+        Debug.Log($"Total SCORE: {totalScore}");
+        Debug.Log($"Total merged veggies: {mergedItemsCounter}");
+
         Merged?.Invoke();
         newItem.transform.SetParent(transform.parent, false);
         newItem.transform.position = (transform.position+otherItem.transform.position)/2f;
