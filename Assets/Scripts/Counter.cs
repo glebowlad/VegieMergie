@@ -51,7 +51,7 @@ public class Counter : MonoBehaviour
             count8*256 + count9*512;
 
         Debug.Log(total_count);
-        scoreText.text = $"—чет: {total_count}";
+        scoreText.text = $"{total_count}";
 
     }
 
