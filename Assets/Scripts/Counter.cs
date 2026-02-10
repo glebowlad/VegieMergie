@@ -30,7 +30,7 @@ public class Counter : MonoBehaviour
         mergedItemsCounter++;
         scoreCounter = (int) Math.Pow(2, Array.IndexOf(InternalEditorUtility.tags, newItem.tag)-8);
         totalScore += scoreCounter;
-        scoreText.text=totalScore.ToString();
+        scoreText.text=totalScore.ToString().PadLeft(4,'0');
         Debug.Log($"Total SCORE: {totalScore}");
         Debug.Log($"Total merged veggies: {mergedItemsCounter}");
     }
