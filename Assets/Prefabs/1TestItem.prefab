@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3301794654294713659}
   m_Layer: 6
   m_Name: 1TestItem
-  m_TagString: Item1
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelItem: {fileID: 6008126811829159264, guid: e56c770979c398743ba747f7add9bd74, type: 3}
+  score: 0
 --- !u!114 &3579437918487895623
 MonoBehaviour:
   m_ObjectHideFlags: 0

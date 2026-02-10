@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4880512475849661267}
   m_Layer: 6
   m_Name: 7TestItem
-  m_TagString: Item7
+  m_TagString: 7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelItem: {fileID: 6008126811829159264, guid: 02ff866eaef89984c8025e0f7ea40255, type: 3}
+  score: 0
 --- !u!114 &5698228113850057628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 266638105498670179, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
