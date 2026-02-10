@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
         Merge.Merged += PlayMergeSound;
     }
 
-    private void PlayMergeSound()
+    private void PlayMergeSound(GameObject item)
     {
         source.PlayOneShot(mergeSound);
     }
