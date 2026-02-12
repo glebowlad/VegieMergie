@@ -42,5 +42,6 @@ public class AudioManager : MonoBehaviour
     private void OnDestroy()
     {
         drag.OnDragFinished -= PlayDropSound;
+        Merge.Merged -= PlayMergeSound;
     }
 }
