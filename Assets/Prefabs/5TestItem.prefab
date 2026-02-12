@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 6008126811829159264}
   m_LocalRotation: {x: -0, y: -0, z: -0.02699737, w: 0.9996356}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18, y: 18, z: 18}
+  m_LocalScale: {x: 16.44, y: 16.44, z: 16.44}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4603244406254064934}
@@ -133,7 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelItem: {fileID: 6008126811829159264, guid: 832687c7ba372a0439e4bfac6646c31e, type: 3}
-  score: 0
 --- !u!114 &5698228113850057628
 MonoBehaviour:
   m_ObjectHideFlags: 0

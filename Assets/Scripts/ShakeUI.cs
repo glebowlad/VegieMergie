@@ -3,22 +3,24 @@ using System.Collections;
 
 public class ShakeUI : MonoBehaviour
 {
-    public RectTransform targetImage;
-
-    public float duration = 0.2f; 
-    public float magnitude = 10f; 
+    public float duration = 0.2f;
+    public float magnitude = 10f;
 
     private Vector3 originalPosition;
+    private RectTransform rectTransform;
 
     void Start()
     {
-        if (targetImage != null)
-            originalPosition = targetImage.localPosition;
+        rectTransform = GetComponent<RectTransform>();
+
+        if (rectTransform != null)
+            originalPosition = rectTransform.localPosition;
     }
 
-    
     public void StartShake()
     {
+        if (rectTransform == null) return;
+
         StopAllCoroutines();
         StartCoroutine(Shake());
     }
@@ -32,13 +34,12 @@ public class ShakeUI : MonoBehaviour
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
 
-            targetImage.localPosition = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
+            rectTransform.localPosition = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
 
             elapsed += Time.deltaTime;
-            yield return null; 
+            yield return null;
         }
 
-        
-        targetImage.localPosition = originalPosition;
+        rectTransform.localPosition = originalPosition;
     }
 }
