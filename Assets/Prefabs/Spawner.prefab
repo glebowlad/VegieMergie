@@ -64,6 +64,8 @@ MonoBehaviour:
   - {fileID: 6008126811829159264, guid: b9df0ac4801ca70499059e7e5491f8a6, type: 3}
   - {fileID: 6008126811829159264, guid: 300b5da288f267749a6b09e681beb611, type: 3}
   - {fileID: 6008126811829159264, guid: e56c770979c398743ba747f7add9bd74, type: 3}
+  - {fileID: 6008126811829159264, guid: 37312a9c45e23f84a9d99935daacdc95, type: 3}
+  - {fileID: 6008126811829159264, guid: 03178c686644b5640a63583831d78cb8, type: 3}
   gameOverLine: {fileID: 0}
 --- !u!114 &2706150352772572661
 MonoBehaviour:
