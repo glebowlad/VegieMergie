@@ -28,6 +28,10 @@ public class AudioManager : MonoBehaviour
 
     private void PlayMergeSound(GameObject item)
     {
+        if (mergeSound == null)
+        {
+            return;
+        }
         source.PlayOneShot(mergeSound);
     }
 
