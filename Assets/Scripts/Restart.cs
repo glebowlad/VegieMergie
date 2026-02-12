@@ -6,7 +6,7 @@ public class RestartGame : MonoBehaviour
     public void Restart()
     {
         
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
 
         // как я понял,если в игре есть таймер,это его скидывает
         Time.timeScale = 1f;
