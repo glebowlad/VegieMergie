@@ -19,18 +19,20 @@ public class Merge : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if( isMerging)
-            return;
+        
         collidedItem = collision.gameObject;
         if (nextLevelItem != null)
         {
-        if (gameObject.CompareTag(collidedItem.tag))
-        {
-            if (InitiateMerge())
+            if (isMerging == true){return;}
+
+            if (gameObject.CompareTag(collidedItem.tag))
             {
-                    StartCoroutine(CreateNewItem());
-                }
-        }
+                    isMerging = true;
+                    if (InitiateMerge())
+                    {
+                        StartCoroutine(CreateNewItem());
+                    }
+            }
         }
     }
     
@@ -40,7 +42,7 @@ public class Merge : MonoBehaviour
     }
     private IEnumerator CreateNewItem()
     {
-        isMerging= true;
+       
         yield return new WaitForSeconds(0.15f);
         collidedItem.GetComponent<Merge>().isMerging = true;
         GameObject newItem = pool.Get();
@@ -55,6 +57,7 @@ public class Merge : MonoBehaviour
         newItemEffect.Play();
         Rigidbody2D newItemRB = newItem.GetComponent<Rigidbody2D>();
         newItemRB.simulated=true;
+        isMerging=false;
 
     }
     
