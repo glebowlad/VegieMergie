@@ -31,12 +31,13 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     }
 public void OnBeginDrag(PointerEventData eventData)
     {
+        if (Spawner.IsSpawned == false) { return; }
         //DragBegined?.Invoke();
-      
+
     }
     public void OnDrag(PointerEventData eventData)
     {
-
+        if(Spawner.IsSpawned== false) { return; }
         WhileDrag?.Invoke();
         line.gameObject.SetActive(true);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -70,6 +71,7 @@ public void OnBeginDrag(PointerEventData eventData)
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (Spawner.IsSpawned == false) { return; }
         line.gameObject.SetActive(false);
         OnDragFinished?.Invoke();
     }

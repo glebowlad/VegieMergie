@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
-    public GameObject[] vegPrefabs;
-    private GameObject itemToSpawn;
-    private float itemWidth;
-    private RectTransform spawnerRect;
-    private Drag drag;
-    private PrefabPool pool;
+    [SerializeField]
+    private GameObject[] vegPrefabs;
     [SerializeField]
     private GameObject gameOverLine;
+    private GameObject itemToSpawn;
+    private RectTransform spawnerRect;
+    private PrefabPool pool;
+    private float itemWidth;
+    private Drag drag;
+    public static bool IsSpawned { get; private set; }
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
+        IsSpawned = false;
         StopAllCoroutines();
         StartCoroutine(SpawnTimer());
 
@@ -34,6 +36,7 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);
         itemToSpawn = pool.Get();
+        IsSpawned = true;
         itemToSpawn.transform.SetParent(transform,false);
         var itemDrag=itemToSpawn.GetComponent<Vegetable>();
         itemDrag.Initialize(drag, gameOverLine);
