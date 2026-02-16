@@ -12,10 +12,6 @@ public class Merge : MonoBehaviour
     private GameObject collidedItem;
     private PrefabPool pool;
     public static event Action<GameObject> Merged;
-
-    //private static int mergedItemsCounter=0;
-    //public int scoreCounter = 0;
-    //private static int totalScore=0;
     private void Awake()
     {
         pool= new PrefabPool(nextLevelItem);
