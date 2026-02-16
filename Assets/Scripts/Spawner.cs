@@ -26,36 +26,23 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        if (itemToSpawn != null )
-        {
-            StartCoroutine(CheckGameOver());
-            //return;
-        }
-            StartCoroutine(SpawnTimer());
+        StopAllCoroutines();
+        StartCoroutine(SpawnTimer());
 
-        
-    }
-
-    private IEnumerator CheckGameOver()
-    {
-        yield return new WaitForSeconds(0.4f);
-        if(itemToSpawn.transform.position.y > gameOverLine.transform.position.y)
-        {
-            Debug.Log("GAME OVER");
-        }
     }
     private IEnumerator SpawnTimer()
     {
         yield return new WaitForSeconds(0.4f);
         itemToSpawn = pool.Get();
         itemToSpawn.transform.SetParent(transform,false);
-        var itemDrag=itemToSpawn.GetComponent<VegetableDrag>();
-        itemDrag.Subscribe(drag);
+        var itemDrag=itemToSpawn.GetComponent<Vegetable>();
+        itemDrag.Initialize(drag, gameOverLine);
         itemWidth= itemToSpawn.GetComponent<RectTransform>().rect.width;
         spawnerRect.sizeDelta= new Vector2(itemWidth,spawnerRect.sizeDelta.y);
     }
     private void Subscribe(Drag _drag)
     {
+        _drag = drag;
         drag.OnDragFinished += Spawn;
     }
     private void OnDestroy()
