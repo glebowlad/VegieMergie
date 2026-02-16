@@ -9,7 +9,7 @@ public class Merge : MonoBehaviour
     public GameObject nextLevelItem;
     private Canvas canvas;
     private bool isMerging = false;
-    private GameObject otherItem;
+    private GameObject collidedItem;
     private PrefabPool pool;
     public static event Action<GameObject> Merged;
 
@@ -25,10 +25,10 @@ public class Merge : MonoBehaviour
     {
         if( isMerging)
             return;
-        otherItem = collision.gameObject;
+        collidedItem = collision.gameObject;
         if (nextLevelItem != null)
         {
-        if (gameObject.CompareTag(otherItem.tag))
+        if (gameObject.CompareTag(collidedItem.tag))
         {
             if (InitiateMerge())
             {
@@ -40,19 +40,19 @@ public class Merge : MonoBehaviour
     
     private bool InitiateMerge()
     {
-        return transform.position.y < otherItem.transform.position.y;
+        return transform.position.y < collidedItem.transform.position.y;
     }
     private IEnumerator CreateNewItem()
     {
         isMerging= true;
         yield return new WaitForSeconds(0.15f);
-        otherItem.GetComponent<Merge>().isMerging = true;
+        collidedItem.GetComponent<Merge>().isMerging = true;
         GameObject newItem = pool.Get();
         Merged?.Invoke(newItem);
         newItem.transform.SetParent(transform.parent, false);
-        newItem.transform.position = (transform.position+otherItem.transform.position)/2f;
+        newItem.transform.position = (transform.position+collidedItem.transform.position)/2f;
 
-        pool.Release(otherItem);
+        pool.Release(collidedItem);
         pool.Release(gameObject);
         
         ParticleSystem newItemEffect=newItem.GetComponentInChildren<ParticleSystem>();
