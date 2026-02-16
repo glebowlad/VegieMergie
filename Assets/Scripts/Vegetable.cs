@@ -3,23 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VegetableDrag : MonoBehaviour
+public class Vegetable : MonoBehaviour
 {
 
     private Drag drag;
     private Rigidbody2D rigidbody;
+    private GameObject gameOverLine;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.simulated = false;
-      // drag = GetComponentInParent<Drag>(); 
+      
     }
-    //void Start()
-    //{
-    //    Subscribe(drag);
-    //}
-    public void Subscribe(Drag _drag)
+    public void Initialize(Drag _drag, GameObject _gameOverLine)
     {
+        gameOverLine = _gameOverLine;
         drag = _drag;
         if (drag!= null)
         {
@@ -30,6 +29,7 @@ public class VegetableDrag : MonoBehaviour
     private void OnDrag()
     {
         transform.position= transform.parent.position;
+        StopAllCoroutines();
     }
     private void DragFinished()
     {
@@ -43,7 +43,15 @@ public class VegetableDrag : MonoBehaviour
             drag.OnDragFinished -= DragFinished;
         }
         this.enabled = false;
+        StartCoroutine(CheckGameOver());
     }
- 
 
+    private IEnumerator CheckGameOver()
+    {
+        yield return new WaitForSeconds(2f);
+        if (gameObject.transform.position.y > gameOverLine.transform.position.y)
+        {
+            Debug.Log("GAME OVER");
+        }
+    }
 }
