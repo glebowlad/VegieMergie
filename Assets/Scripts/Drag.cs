@@ -17,7 +17,7 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     private float minX;
     private float maxX;
     public event Action WhileDrag;
-    public event Action DragBegined;
+    //public event Action DragBegined;
     public event Action OnDragFinished;
     private void Awake()
     {
@@ -47,12 +47,13 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     //}
 public void OnBeginDrag(PointerEventData eventData)
     {
-        DragBegined?.Invoke();
+        //DragBegined?.Invoke();
         line.gameObject.SetActive(true);
        // CalculateLimits();
     }
     public void OnDrag(PointerEventData eventData)
     {
+
         WhileDrag?.Invoke();
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
         canvas.transform as RectTransform,
