@@ -2043,8 +2043,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6088820d24d8042a0c637c9376bacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mergeSound: {fileID: 8300000, guid: 042fa51cd37b1924d977da52270976c4, type: 3}
-  dropSound: {fileID: 8300000, guid: 5e3042e6031d0ff4091af6db4756df51, type: 3}
+  mergeSounds:
+  - {fileID: 0}
+  dropSounds:
+  - {fileID: 0}
   drag: {fileID: 1944206786}
 --- !u!82 &2113414911
 AudioSource:
