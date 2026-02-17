@@ -1485,9 +1485,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mergeSounds:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 042fa51cd37b1924d977da52270976c4, type: 3}
   dropSounds:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5e3042e6031d0ff4091af6db4756df51, type: 3}
   drag: {fileID: 1944206786}
 --- !u!82 &2113414911
 AudioSource:
