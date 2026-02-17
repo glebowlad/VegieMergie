@@ -17,24 +17,32 @@ public class Merge : MonoBehaviour
         pool= new PrefabPool(nextLevelItem);
         canvas = GetComponentInParent<Canvas>();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-        collidedItem = collision.gameObject;
-        if (nextLevelItem != null)
-        {
-            if (isMerging == true){return;}
 
-            if (gameObject.CompareTag(collidedItem.tag))
-            {
-                    isMerging = true;
-                    if (InitiateMerge())
-                    {
-                        StartCoroutine(CreateNewItem());
-                    }
-            }
+    private void OnCollisionEnter2D(Collision2D collision)
+{
+    if (nextLevelItem == null || isMerging) return;
+
+    // Проверяем тег
+    if (collision.gameObject.CompareTag(gameObject.tag))
+    {
+        Merge otherMerge = collision.gameObject.GetComponent<Merge>();
+
+        // Если сосед уже в процессе слияния — игнорируем
+        if (otherMerge == null || otherMerge.isMerging) return;
+
+        // ПРАВИЛО ПРИОРИТЕТА:
+        // 1. Сливаемся, только если мой ID меньше, чем у соседа (выбираем одного "лидера")
+        // 2. Это исключит ситуацию, когда один объект пытается слиться сразу с двумя
+        if (gameObject.GetInstanceID() < collision.gameObject.GetInstanceID())
+        {
+            isMerging = true;
+            otherMerge.isMerging = true; // Сразу блокируем соседа
+            
+            collidedItem = collision.gameObject;
+            StartCoroutine(CreateNewItem());
         }
     }
+}
     
     private bool InitiateMerge()
     {
