@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class Spawner : MonoBehaviour
     private GameObject[] vegPrefabs;
     [SerializeField]
     private GameObject gameOverLine;
+    [SerializeField]
+    private Image nextImage;
     private GameObject itemToSpawn;
+    private GameObject nextItemToSpawn;
     private RectTransform spawnerRect;
     private PrefabPool pool;
     private float itemWidth;
@@ -34,8 +38,20 @@ public class Spawner : MonoBehaviour
     }
     private IEnumerator SpawnTimer()
     {
+
         yield return new WaitForSeconds(0.4f);
-        itemToSpawn = pool.Get();
+        if (nextItemToSpawn == null)
+        {
+            itemToSpawn = pool.GetRandom();
+        }
+        else
+        {
+            itemToSpawn = nextItemToSpawn;
+            itemToSpawn.SetActive(true);
+        }
+        nextItemToSpawn = pool.GetRandom();
+        nextItemToSpawn.SetActive(false);
+        nextImage.sprite = nextItemToSpawn.GetComponent<SpriteRenderer>().sprite;
         IsSpawned = true;
         itemToSpawn.transform.SetParent(transform,false);
         var itemDrag=itemToSpawn.GetComponent<Vegetable>();
