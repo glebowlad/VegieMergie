@@ -7,36 +7,29 @@ using UnityEngine;
 public class Merge : MonoBehaviour
 {
     public GameObject nextLevelItem;
-    private Canvas canvas;
     private bool isMerging = false;
     private GameObject collidedItem;
     private PrefabPool pool;
     public static event Action<GameObject> Merged;
     private void Awake()
     {
-        pool= new PrefabPool(nextLevelItem);
-        canvas = GetComponentInParent<Canvas>();
+        pool = new PrefabPool(nextLevelItem);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
 {
     if (nextLevelItem == null || isMerging) return;
 
-    // Проверяем тег
+   
     if (collision.gameObject.CompareTag(gameObject.tag))
     {
         Merge otherMerge = collision.gameObject.GetComponent<Merge>();
-
-        // Если сосед уже в процессе слияния — игнорируем
         if (otherMerge == null || otherMerge.isMerging) return;
 
-        // ПРАВИЛО ПРИОРИТЕТА:
-        // 1. Сливаемся, только если мой ID меньше, чем у соседа (выбираем одного "лидера")
-        // 2. Это исключит ситуацию, когда один объект пытается слиться сразу с двумя
         if (gameObject.GetInstanceID() < collision.gameObject.GetInstanceID())
         {
             isMerging = true;
-            otherMerge.isMerging = true; // Сразу блокируем соседа
+            otherMerge.isMerging = true;
             
             collidedItem = collision.gameObject;
             StartCoroutine(CreateNewItem());
@@ -52,7 +45,7 @@ public class Merge : MonoBehaviour
     {
        
         yield return new WaitForSeconds(0.15f);
-        collidedItem.GetComponent<Merge>().isMerging = true;
+        //collidedItem.GetComponent<Merge>().isMerging = true;
         GameObject newItem = pool.Get();
         Merged?.Invoke(newItem);
         newItem.transform.SetParent(transform.parent, false);
