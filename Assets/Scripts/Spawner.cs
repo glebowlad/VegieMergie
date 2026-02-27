@@ -19,6 +19,8 @@ public class Spawner : MonoBehaviour
     private float itemWidth;
     private Drag drag;
     public static bool IsSpawned { get; private set; }
+    public float CurrentItemWidth => itemWidth; 
+
 
     private void Awake()
     {
@@ -38,8 +40,8 @@ public class Spawner : MonoBehaviour
     }
     private IEnumerator SpawnTimer()
     {
-
         yield return new WaitForSeconds(0.4f);
+
         if (nextItemToSpawn == null)
         {
             itemToSpawn = pool.GetRandom();
@@ -49,16 +51,27 @@ public class Spawner : MonoBehaviour
             itemToSpawn = nextItemToSpawn;
             itemToSpawn.SetActive(true);
         }
+
         nextItemToSpawn = pool.GetRandom();
         nextItemToSpawn.SetActive(false);
         nextImage.sprite = nextItemToSpawn.GetComponent<SpriteRenderer>().sprite;
+
         IsSpawned = true;
-        itemToSpawn.transform.SetParent(transform,false);
-        var itemDrag=itemToSpawn.GetComponent<Vegetable>();
-        itemDrag.Initialize(drag, gameOverLine);
-        itemWidth= itemToSpawn.GetComponent<RectTransform>().rect.width;
-        spawnerRect.sizeDelta= new Vector2(itemWidth,spawnerRect.sizeDelta.y);
+        itemToSpawn.transform.SetParent(transform, false);
+
+        // Получаем скрипт овоща для инициализации и доступа к его настройкам
+        var itemVeg = itemToSpawn.GetComponent<Vegetable>();
+        itemVeg.Initialize(drag, gameOverLine);
+
+        // Рассчитываем ширину с учетом индивидуального отступа овоща
+        // Если овощ "цепляет" стенку — в инспекторе префаба ставим radiusOffset больше 0
+        // Если "не доходит" — ставим меньше 0
+        itemWidth = itemToSpawn.GetComponent<RectTransform>().rect.width + itemVeg.radiusOffset;
+
+        // Обновляем размер спавнера (это нужно для корректной работы Drag)
+        spawnerRect.sizeDelta = new Vector2(itemWidth, spawnerRect.sizeDelta.y);
     }
+
     private void Subscribe(Drag _drag)
     {
         _drag = drag;

@@ -9,6 +9,8 @@ public class Vegetable : MonoBehaviour
     private Drag drag;
     private Rigidbody2D rigidbody;
     private GameObject gameOverLine;
+    public float radiusOffset = 0f; // Положительное число отодвинет от стенки, отрицательное — приблизит
+
 
     private void Awake()
     {
