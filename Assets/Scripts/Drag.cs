@@ -1,78 +1,93 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
-public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class Drag : MonoBehaviour
 {
-    
     private Transform line;
     private RectTransform rectTransform;
-    private float spawnerWidth;
     private Canvas canvas;
+    
     public RectTransform leftWall;
     public RectTransform rightWall;
-    private float minX;
-    private float maxX;
+    
     public event Action WhileDrag;
-    //public event Action DragBegined;
     public event Action OnDragFinished;
+
+    private bool isDragging = false;
+
     private void Awake()
     {
         canvas = GetComponentInParent<Canvas>();
-        rectTransform= GetComponent<RectTransform>();
-        spawnerWidth= rectTransform.rect.width;
+        rectTransform = GetComponent<RectTransform>();
         line = transform.GetChild(0);
         line.gameObject.SetActive(false);
-
-
     }
-public void OnBeginDrag(PointerEventData eventData)
-    {
-        if (Spawner.IsSpawned == false) { return; }
-        //DragBegined?.Invoke();
 
-    }
-    public void OnDrag(PointerEventData eventData)
+    private void Update()
     {
-        if(Spawner.IsSpawned== false) { return; }
-        WhileDrag?.Invoke();
-        line.gameObject.SetActive(true);
+        if (!Spawner.IsSpawned) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Проверяем, кликнули ли мы по кнопкам
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                // Получаем объект, по которому кликнули
+                GameObject clickedObject = EventSystem.current.currentSelectedGameObject;
+                
+                // Если кликнули по UI, и это НЕ наша зона ввода — игнорируем (выходим)
+                // Здесь замени "InputArea" на точное имя твоего объекта в иерархии
+                if (clickedObject != null && clickedObject.name != "InputArea") 
+                {
+                    return;
+                }
+            }
+
+            isDragging = true;
+            line.gameObject.SetActive(true);
+        }
+
+        if (isDragging && Input.GetMouseButton(0))
+        {
+            MoveSpawner();
+            WhileDrag?.Invoke();
+        }
+
+        if (isDragging && Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+            line.gameObject.SetActive(false);
+            OnDragFinished?.Invoke();
+        }
+    }
+
+
+    private void MoveSpawner()
+    {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        canvas.transform as RectTransform,
-        eventData.position,
-        canvas.worldCamera,
-        out Vector2 localPoint);
-        // ����������� ������� ���� � ��������� ���������� �������
+            canvas.transform as RectTransform,
+            Input.mousePosition,
+            canvas.worldCamera,
+            out Vector2 localPoint);
+
         Vector2 leftWallLocal = canvas.transform.InverseTransformPoint(leftWall.position);
         Vector2 rightWallLocal = canvas.transform.InverseTransformPoint(rightWall.position);
-        // ��������� ���� ������ �������
-        float halfWidth = rectTransform.rect.width/1.5f;
+        
+        // Ссылка на компонент Spawner (убедись, что он на том же объекте или найди его)
+        Spawner spawner = GetComponent<Spawner>();
+        
+        // Берем половину ширины овоща. Если овоща нет, отступ 0.
+        float halfFruitWidth = (spawner != null) ? spawner.CurrentItemWidth / 2f : 0;
 
-        // ������������ ��������
         float clampedX = Mathf.Clamp(
             localPoint.x,
-            leftWallLocal.x + halfWidth,
-            rightWallLocal.x - halfWidth
+            leftWallLocal.x + halfFruitWidth, 
+            rightWallLocal.x - halfFruitWidth
         );
 
-        // ������������� �������
-        rectTransform.localPosition = new Vector3(
-            clampedX,
-            rectTransform.localPosition.y,
-            rectTransform.localPosition.z
-        );
-
-
-
-       
+        rectTransform.localPosition = new Vector3(clampedX, rectTransform.localPosition.y, rectTransform.localPosition.z);
     }
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        if (Spawner.IsSpawned == false) { return; }
-        line.gameObject.SetActive(false);
-        OnDragFinished?.Invoke();
-    }
+
+
 }
