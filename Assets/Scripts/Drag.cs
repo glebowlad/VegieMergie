@@ -7,7 +7,7 @@ public class Drag : MonoBehaviour
     private Transform line;
     private RectTransform rectTransform;
     private Canvas canvas;
-    
+    private Spawner spawner;
     public RectTransform leftWall;
     public RectTransform rightWall;
     
@@ -19,6 +19,7 @@ public class Drag : MonoBehaviour
     private void Awake()
     {
         canvas = GetComponentInParent<Canvas>();
+        spawner = GetComponent<Spawner>();
         rectTransform = GetComponent<RectTransform>();
         line = transform.GetChild(0);
         line.gameObject.SetActive(false);
@@ -73,17 +74,14 @@ public class Drag : MonoBehaviour
 
         Vector2 leftWallLocal = canvas.transform.InverseTransformPoint(leftWall.position);
         Vector2 rightWallLocal = canvas.transform.InverseTransformPoint(rightWall.position);
-        
-        // Ссылка на компонент Spawner (убедись, что он на том же объекте или найди его)
-        Spawner spawner = GetComponent<Spawner>();
-        
+
         // Берем половину ширины овоща. Если овоща нет, отступ 0.
-        float halfFruitWidth = (spawner != null) ? spawner.CurrentItemWidth / 2f : 0;
+        float halfWidth = (spawner != null) ? spawner.CurrentItemWidth / 2f : 0;
 
         float clampedX = Mathf.Clamp(
             localPoint.x,
-            leftWallLocal.x + halfFruitWidth, 
-            rightWallLocal.x - halfFruitWidth
+            leftWallLocal.x + halfWidth, 
+            rightWallLocal.x - halfWidth
         );
 
         rectTransform.localPosition = new Vector3(clampedX, rectTransform.localPosition.y, rectTransform.localPosition.z);
