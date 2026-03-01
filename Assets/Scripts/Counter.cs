@@ -9,7 +9,7 @@ using UnityEditorInternal.Profiling.Memory.Experimental;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField]
+    
     private TextMeshProUGUI scoreText;
 
     public static int mergedItemsCounter = 0;
@@ -18,6 +18,7 @@ public class Counter : MonoBehaviour
 
     private void Awake()
     {
+        scoreText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         scoreText.text = "0000";
         Merge.Merged += CountScore;
     }

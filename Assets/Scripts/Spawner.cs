@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     private GameObject gameOverLine;
     [SerializeField]
     private Image nextItemImage;
+
     private GameObject itemToSpawn;
     private GameObject nextItemToSpawn;
     private RectTransform spawnerRect;
@@ -25,6 +26,7 @@ public class Spawner : MonoBehaviour
     private void Awake()
     {
         spawnerRect = gameObject.GetComponent<RectTransform>();
+        nextItemImage.enabled = false;
         pool = new PrefabPool(vegPrefabs,10);
         drag = GetComponent<Drag>();
         Subscribe(drag);
@@ -54,6 +56,7 @@ public class Spawner : MonoBehaviour
 
         nextItemToSpawn = pool.GetRandom();
         nextItemToSpawn.SetActive(false);
+        nextItemImage.enabled=true;
         nextItemImage.sprite = nextItemToSpawn.GetComponent<SpriteRenderer>().sprite;
 
         IsSpawned = true;
