@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject gameOverLine;
     [SerializeField]
-    private Image nextImage;
+    private Image nextItemImage;
     private GameObject itemToSpawn;
     private GameObject nextItemToSpawn;
     private RectTransform spawnerRect;
@@ -54,7 +54,7 @@ public class Spawner : MonoBehaviour
 
         nextItemToSpawn = pool.GetRandom();
         nextItemToSpawn.SetActive(false);
-        nextImage.sprite = nextItemToSpawn.GetComponent<SpriteRenderer>().sprite;
+        nextItemImage.sprite = nextItemToSpawn.GetComponent<SpriteRenderer>().sprite;
 
         IsSpawned = true;
         itemToSpawn.transform.SetParent(transform, false);
