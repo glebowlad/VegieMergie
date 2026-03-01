@@ -1,11 +1,10 @@
 using TMPro;
 using System;
 using UnityEngine;
-using UnityEditorInternal;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditorInternal.Profiling.Memory.Experimental;
+
+
 
 public class Counter : MonoBehaviour
 {
@@ -29,7 +28,7 @@ public class Counter : MonoBehaviour
     private void CountScore(GameObject newItem)
     {
         mergedItemsCounter++;
-        scoreCounter = (int) Math.Pow(2, Array.IndexOf(InternalEditorUtility.tags, newItem.tag)-8);
+        scoreCounter = 100;
         totalScore += scoreCounter;
         scoreText.text=totalScore.ToString().PadLeft(4,'0');
         Debug.Log($"Total SCORE: {totalScore}");
