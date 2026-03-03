@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4884683387980380290}
   - component: {fileID: 4420354329971903068}
   - component: {fileID: 5698228113850057628}
-  - component: {fileID: 1723366386195753572}
+  - component: {fileID: 3283623780974291287}
   m_Layer: 6
   m_Name: 4Item
   m_TagString: 4
@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 6008126811829159264}
   m_LocalRotation: {x: -0, y: -0, z: -0.6172708, w: 0.78675073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20.699999, y: 20.699999, z: 20.699999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3981498162018730526}
@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 146.11, y: 148.7}
+  m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &3927933029005862036
 SpriteRenderer:
@@ -82,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: -661797689
   m_SortingLayer: 1
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: d3f75ee2a8f3879439c5c55091f32cf0, type: 3}
+  m_Sprite: {fileID: 1291935485, guid: d3f75ee2a8f3879439c5c55091f32cf0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 20.48, y: 20.48}
+  m_Size: {x: 159.6, y: 112.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -104,10 +104,10 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 40
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_UseAutoMass: 1
+  m_Mass: 12011.115
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 0007aec6b5396ed488f4cea311337338, type: 2}
   m_IncludeLayers:
@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815e0ca9350d0b4d938b7bd60e27e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &1723366386195753572
+  radiusOffset: 145
+--- !u!70 &3283623780974291287
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,8 +178,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000034348823, y: -0.10247838}
-  m_Size: {x: 7.4421163, y: 4.883452}
+  m_Offset: {x: -0.7834015, y: 1.194275}
+  m_Size: {x: 147.86871, y: 94.07141}
   m_Direction: 1
 --- !u!1001 &3908861483871434821
 PrefabInstance:
@@ -198,15 +199,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.07415371
+      value: 1.4794089
       objectReference: {fileID: 0}
     - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.07415371
+      value: 1.4794089
       objectReference: {fileID: 0}
     - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.07415371
+      value: 1.4794089
       objectReference: {fileID: 0}
     - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
       propertyPath: m_LocalPosition.x

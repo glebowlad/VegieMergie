@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
         Merge.Merged += PlayMergeSound;
     }
 
-    private void PlayMergeSound(GameObject item)
+    private void PlayMergeSound(int level)
     {
         if (mergeSounds == null || mergeSounds.Length == 0)
         {

@@ -56,8 +56,12 @@ public class Spawner : MonoBehaviour
 
         nextItemToSpawn = pool.GetRandom();
         nextItemToSpawn.SetActive(false);
-        nextItemImage.enabled=true;
+
         nextItemImage.sprite = nextItemToSpawn.GetComponent<SpriteRenderer>().sprite;
+        nextItemImage.enabled = true;
+
+
+
 
         IsSpawned = true;
         itemToSpawn.transform.SetParent(transform, false);

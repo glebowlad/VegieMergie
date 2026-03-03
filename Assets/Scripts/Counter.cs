@@ -1,37 +1,51 @@
 using TMPro;
-using System;
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-
-
 
 public class Counter : MonoBehaviour
 {
-    
     private TextMeshProUGUI scoreText;
-
-    public static int mergedItemsCounter = 0;
-    private int scoreCounter = 0;
+    private int displayedScore = 0;
     private static int totalScore = 0;
+    public static int totalMergedItems = 0;
+    [SerializeField] private float duration = 0.5f;
+    private Coroutine countCoroutine;
 
     private void Awake()
     {
+        totalMergedItems = 0;
+        totalScore = 0;
         scoreText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        scoreText.text = "0000";
-        Merge.Merged += CountScore;
+        scoreText.text = "00000";
+        Merge.Merged += OnVeggiesMerged;
     }
-    private void OnDestroy()
+
+    private void OnDestroy() { Merge.Merged -= OnVeggiesMerged; }
+
+    private void OnVeggiesMerged(int level)
     {
-        Merge.Merged -= CountScore;
+        totalMergedItems++;
+        Debug.Log($"totalMergedItems: {totalMergedItems}");
+        int pointsToAdd = (level + 1) + (level * 2);
+        totalScore += pointsToAdd;
+
+        if (countCoroutine != null) StopCoroutine(countCoroutine);
+        countCoroutine = StartCoroutine(AnimateScore(totalScore));
     }
-    private void CountScore(GameObject newItem)
+
+    private IEnumerator AnimateScore(int targetScore)
     {
-        mergedItemsCounter++;
-        scoreCounter = 100;
-        totalScore += scoreCounter;
-        scoreText.text=totalScore.ToString().PadLeft(4,'0');
-        Debug.Log($"Total SCORE: {totalScore}");
-        Debug.Log($"Total merged veggies: {mergedItemsCounter}");
+        int initialScore = displayedScore;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            displayedScore = (int)Mathf.Lerp(initialScore, targetScore, elapsed / duration);
+            scoreText.text = displayedScore.ToString().PadLeft(5, '0');
+            yield return null;
+        }
+        displayedScore = targetScore;
+        scoreText.text = displayedScore.ToString().PadLeft(5, '0');
     }
 }
