@@ -1,23 +1,32 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using YG;
 
-public class ShakeUI : MonoBehaviour
+public class Shaker : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI shakeCounterText;
+    [SerializeField]
+    private GameObject AddVideo;
+    
     public float duration = 0.2f;
     public float magnitude = 10f;
-    public int maxClicks = 5;
-    public TextMeshProUGUI counterText;
+    public int maxShakes = 5;
 
-    private int currentClicks;
+    private int currentShakeCount;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private RectTransform rectTransform;
+    private string rewardID;
 
     void Start()
     {
+        AddVideo.SetActive(false);
+        AddVideo.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text ="+"+ maxShakes.ToString();
+        shakeCounterText.enabled = true;
         rectTransform = GetComponent<RectTransform>();
-        currentClicks = maxClicks;
+        currentShakeCount = maxShakes;
 
         if (rectTransform != null)
         {
@@ -25,28 +34,59 @@ public class ShakeUI : MonoBehaviour
             originalRotation = rectTransform.localRotation;
         }
 
-        UpdateUI();
+        UpdateCounter();
     }
 
     public void OnButtonClick()
     {
-        if (currentClicks > 0)
+        UpdateCounter();
+        if (currentShakeCount > 0)
         {
-            currentClicks--;
+            currentShakeCount--;
             StartShake();
+            UpdateCounter();
         }
         else
         {
-            currentClicks = maxClicks;
+            MyRewardAdvShow();
+            
+
         }
-        
-        UpdateUI();
+
     }
 
-    private void UpdateUI()
+    private void UpdateCounter()
     {
-        if (counterText != null)
-            counterText.text = (currentClicks > 0) ? currentClicks.ToString() : "W";
+        if (shakeCounterText != null)
+        {
+            if (currentShakeCount > 0)
+            {
+                HideAdvImage();
+                shakeCounterText.text = currentShakeCount.ToString();
+            }
+            else
+            {
+                ShowAddImage();
+            }
+        }
+    }
+    private void ShowAddImage() {
+        shakeCounterText.enabled = false;
+        AddVideo.SetActive(true);
+    }
+    private void MyRewardAdvShow()
+    {
+        YG2.RewardedAdvShow(rewardID, () =>
+        {
+            currentShakeCount += maxShakes;
+            UpdateCounter();
+        });
+    }
+
+    private void HideAdvImage()
+    {
+        AddVideo.SetActive(false);
+        shakeCounterText.enabled = true;
     }
 
     public void StartShake()

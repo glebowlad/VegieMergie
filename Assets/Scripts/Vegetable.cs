@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using UnityEngine;
-
+using YG;
 public class Vegetable : MonoBehaviour
 {
     private Drag drag;
-    private Rigidbody2D rb; // Переименовали, чтобы не было конфликта (желтой ошибки)
+    private Rigidbody2D rb; 
     private GameObject gameOverLine;
     public float radiusOffset = 0f;
 
@@ -37,7 +37,7 @@ public class Vegetable : MonoBehaviour
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         
-        rb.simulated = true; // Используем rb
+        rb.simulated = true; 
 
         if (drag != null)
         {
@@ -54,6 +54,7 @@ public class Vegetable : MonoBehaviour
         if (gameObject.transform.position.y > gameOverLine.transform.position.y)
         {
             Debug.Log("GAME OVER");
+            YG2.InterstitialAdvShow();
         }
     }
 }

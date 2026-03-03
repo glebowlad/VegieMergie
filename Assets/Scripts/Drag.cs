@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using YG;
 
 public class Drag : MonoBehaviour
 {
@@ -59,6 +60,10 @@ public class Drag : MonoBehaviour
         {
             isDragging = false;
             line.gameObject.SetActive(false);
+            if(Counter.totalMergedItems == 30)
+            {
+                YG2.InterstitialAdvShow();
+            }
             OnDragFinished?.Invoke();
         }
     }

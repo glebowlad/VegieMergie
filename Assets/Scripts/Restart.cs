@@ -1,14 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; 
-
+using UnityEngine.SceneManagement;
+using YG;
 public class RestartGame : MonoBehaviour
 {
     public void Restart()
     {
-        
         SceneManager.LoadScene(0);
-
-        // как я понял,если в игре есть таймер,это его скидывает
-        Time.timeScale = 1f;
+        YG2.InterstitialAdvShow();
     }
 }
