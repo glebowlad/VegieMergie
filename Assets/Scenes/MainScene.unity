@@ -687,6 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 998582722}
   textScore: {fileID: 1158350448}
+  drag: {fileID: 1944206786}
 --- !u!114 &453721391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2799,6 +2800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c36df0f3978124287ce7503a848138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
   duration: 0.5
 --- !u!114 &2027674860
 MonoBehaviour:
