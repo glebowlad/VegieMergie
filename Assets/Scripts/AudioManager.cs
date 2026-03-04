@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance = null;
     [SerializeField]
     private AudioClip[] mergeSounds;
     [SerializeField]
@@ -9,21 +11,40 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private Drag drag;
     private AudioSource source;
-
+    public static bool isMuted= false;
+    public static event Action Muted;
     void Awake()
     {
+
+        if (Instance == null)
+        { 
+            Instance = this; 
+        }
+        else 
+        { 
+            Destroy(gameObject); 
+        }
+        DontDestroyOnLoad(gameObject);
+
         source = GetComponent<AudioSource>();
+        source.mute= isMuted;
         Subscribe();
-        
     }
 
     private void Subscribe()
     {
-        drag.OnDragFinished += PlayDropSound;
+        
         Merge.Merged += PlayMergeSound;
     }
 
-    private void PlayMergeSound(int level)
+    public void Mute()
+    {
+        isMuted = !isMuted;
+        source.mute = isMuted;
+        Muted?.Invoke();
+    }
+
+    public void PlayMergeSound(int level)
     {
         if (mergeSounds == null || mergeSounds.Length == 0)
         {
@@ -33,7 +54,7 @@ public class AudioManager : MonoBehaviour
         source.PlayOneShot(randomSound);
     }
 
-    private void PlayDropSound()
+    public void PlayDropSound()
     {
         if (dropSounds == null || dropSounds.Length == 0)
         {
@@ -44,7 +65,7 @@ public class AudioManager : MonoBehaviour
     }
     private void OnDestroy()
     {
-        drag.OnDragFinished -= PlayDropSound;
+        
         Merge.Merged -= PlayMergeSound;
     }
 }

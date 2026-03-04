@@ -657,8 +657,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 291603533}
-        m_TargetAssemblyTypeName: SoundToggle, Assembly-CSharp
-        m_MethodName: ToggleSound
+        m_TargetAssemblyTypeName: SoundImage, Assembly-CSharp
+        m_MethodName: Mute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cd72311f1180af14db04c6aba447b34c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3609,7 +3609,10 @@ MonoBehaviour:
   mergeSounds:
   - {fileID: 8300000, guid: 042fa51cd37b1924d977da52270976c4, type: 3}
   dropSounds:
-  - {fileID: 8300000, guid: 5e3042e6031d0ff4091af6db4756df51, type: 3}
+  - {fileID: 8300000, guid: 46756a477a24d384e8fd8dbd54e228e8, type: 3}
+  - {fileID: 8300000, guid: 9a7d3dbadb29c6a4da745a1abeb7b95f, type: 3}
+  - {fileID: 8300000, guid: be880bc33d0bfbd40b2245d037d73ae9, type: 3}
+  - {fileID: 8300000, guid: 4a1fc03821eabd1498803f76b7eb2bce, type: 3}
   drag: {fileID: 1944206786}
 --- !u!82 &2113414911
 AudioSource:
@@ -3621,11 +3624,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: e74879b2bba881a4780503ff6dd1f38e, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 0.577
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3997,7 +4000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768055894667399829, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.200989
+      value: 9.20105
       objectReference: {fileID: 0}
     - target: {fileID: 5768055894667399829, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_AnchoredPosition.y
