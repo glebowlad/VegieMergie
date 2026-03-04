@@ -9,6 +9,8 @@ public class Shaker : MonoBehaviour
     private TextMeshProUGUI shakeCounterText;
     [SerializeField]
     private GameObject AddVideo;
+    [SerializeField]
+    private GameObject counterObject;
     
     public float duration = 0.2f;
     public float magnitude = 10f;
@@ -70,8 +72,9 @@ public class Shaker : MonoBehaviour
             }
         }
     }
-    private void ShowAddImage() {
-        shakeCounterText.enabled = false;
+    private void ShowAddImage() 
+    {
+        if (counterObject != null) counterObject.SetActive(false);
         AddVideo.SetActive(true);
     }
     private void MyRewardAdvShow()
@@ -86,7 +89,7 @@ public class Shaker : MonoBehaviour
     private void HideAdvImage()
     {
         AddVideo.SetActive(false);
-        shakeCounterText.enabled = true;
+        if (counterObject != null) counterObject.SetActive(true);
     }
 
     public void StartShake()

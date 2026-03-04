@@ -6,26 +6,24 @@ public class Counter : MonoBehaviour
 {
     private TextMeshProUGUI scoreText;
     private int displayedScore = 0;
-    private static int totalScore = 0;
+    public static int totalScore = 0;
     public static int totalMergedItems = 0;
+    
     [SerializeField] private float duration = 0.5f;
     private Coroutine countCoroutine;
 
     private void Awake()
     {
-        totalMergedItems = 0;
         totalScore = 0;
         scoreText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         scoreText.text = "00000";
         Merge.Merged += OnVeggiesMerged;
     }
 
-    private void OnDestroy() { Merge.Merged -= OnVeggiesMerged; }
+    private void OnDestroy() => Merge.Merged -= OnVeggiesMerged;
 
     private void OnVeggiesMerged(int level)
     {
-        totalMergedItems++;
-        Debug.Log($"totalMergedItems: {totalMergedItems}");
         int pointsToAdd = (level + 1) + (level * 2);
         totalScore += pointsToAdd;
 

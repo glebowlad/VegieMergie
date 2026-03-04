@@ -23,7 +23,7 @@ TagManager:
   - UI
   - Vega
   - Effect
-  - 
+  - GameOver
   - 
   - 
   - 
@@ -56,4 +56,10 @@ TagManager:
     locked: 0
   - name: Effect
     uniqueID: 3922989459
+    locked: 0
+  - name: UI
+    uniqueID: 1407120329
+    locked: 0
+  - name: GameOver
+    uniqueID: 1389396079
     locked: 0

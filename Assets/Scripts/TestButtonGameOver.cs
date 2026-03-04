@@ -1,0 +1,29 @@
+using UnityEngine;
+using TMPro; // Добавь это, чтобы работать с TextMeshPro
+
+public class ToggleObject : MonoBehaviour
+{
+    public GameObject targetObject;
+    public TextMeshProUGUI textScore; // Сюда перетащишь текстовый объект с окна финала
+
+    private void Awake()
+    {
+        targetObject.SetActive(false);
+    }
+
+    public void Toggle()
+    {
+        if (targetObject != null)
+        {
+            bool isActive = targetObject.activeSelf;
+            targetObject.SetActive(!isActive);
+
+            // Если окно открывается (становится активным)
+            if (targetObject.activeSelf)
+            {
+                // Берем статическую переменную прямо из класса Counter
+                textScore.text = Counter.totalScore.ToString();
+            }
+        }
+    }
+}
