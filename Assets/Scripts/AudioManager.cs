@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -9,13 +10,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private Drag drag;
     private AudioSource source;
-    private bool isMuted=false;
-
+    public static bool isMuted;
+    public static event Action Muted;
     void Awake()
     {
         source = GetComponent<AudioSource>();
+        isMuted=source.mute;
         Subscribe();
-        
     }
 
     private void Subscribe()
@@ -28,6 +29,7 @@ public class AudioManager : MonoBehaviour
     {
         isMuted = !isMuted;
         source.mute = isMuted;
+        Muted?.Invoke();
     }
 
     public void PlayMergeSound(int level)
