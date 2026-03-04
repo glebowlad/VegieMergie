@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private Drag drag;
     private AudioSource source;
+    private bool isMuted=false;
 
     void Awake()
     {
@@ -23,7 +24,13 @@ public class AudioManager : MonoBehaviour
         Merge.Merged += PlayMergeSound;
     }
 
-    private void PlayMergeSound(int level)
+    public void Mute()
+    {
+        isMuted = !isMuted;
+        source.mute = isMuted;
+    }
+
+    public void PlayMergeSound(int level)
     {
         if (mergeSounds == null || mergeSounds.Length == 0)
         {
@@ -33,7 +40,7 @@ public class AudioManager : MonoBehaviour
         source.PlayOneShot(randomSound);
     }
 
-    private void PlayDropSound()
+    public void PlayDropSound()
     {
         if (dropSounds == null || dropSounds.Length == 0)
         {
