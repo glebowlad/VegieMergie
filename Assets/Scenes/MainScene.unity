@@ -766,7 +766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cd72311f1180af14db04c6aba447b34c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2457,11 +2457,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: e74879b2bba881a4780503ff6dd1f38e, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 0.577
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2829,7 +2829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768055894667399829, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.200989
+      value: 9.20105
       objectReference: {fileID: 0}
     - target: {fileID: 5768055894667399829, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_AnchoredPosition.y
