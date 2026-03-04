@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance = null;
     [SerializeField]
     private AudioClip[] mergeSounds;
     [SerializeField]
@@ -14,6 +15,17 @@ public class AudioManager : MonoBehaviour
     public static event Action Muted;
     void Awake()
     {
+
+        if (Instance == null)
+        { 
+            Instance = this; 
+        }
+        else 
+        { 
+            Destroy(gameObject); 
+        }
+        DontDestroyOnLoad(gameObject);
+
         source = GetComponent<AudioSource>();
         isMuted=source.mute;
         Subscribe();
