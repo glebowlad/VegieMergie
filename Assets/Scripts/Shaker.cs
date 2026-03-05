@@ -30,11 +30,6 @@ public class Shaker : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         currentShakeCount = maxShakes;
 
-        if (rectTransform != null)
-        {
-            originalPosition = rectTransform.localPosition;
-            originalRotation = rectTransform.localRotation;
-        }
 
         UpdateCounter();
     }
@@ -101,6 +96,9 @@ public class Shaker : MonoBehaviour
 
     IEnumerator Shake()
     {
+        originalPosition = rectTransform.localPosition;
+        originalRotation = rectTransform.localRotation;
+        
         float elapsed = 0.0f;
 
         while (elapsed < duration)
