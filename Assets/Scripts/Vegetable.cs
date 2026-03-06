@@ -12,7 +12,7 @@ public class Vegetable : MonoBehaviour
     private TextMeshProUGUI scoreText;
 
     public float radiusOffset = 0f;
-
+    public static event Action GameIsOver;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -55,7 +55,7 @@ public class Vegetable : MonoBehaviour
 
     private IEnumerator CheckGameOver()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         if (gameObject.transform.position.y > gameOverLine.transform.position.y)
         {
             GameOver();
@@ -65,9 +65,11 @@ public class Vegetable : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("GAME OVER");
-        scoreText = gameOverPanel.transform.GetChild(1).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        GameIsOver?.Invoke();
+        scoreText = gameOverPanel.transform.GetChild(1).GetChild(0).GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
         scoreText.text = Counter.totalScore.ToString();
         gameOverPanel.SetActive(true);
         drag.enabled = false;
+
     }
 }

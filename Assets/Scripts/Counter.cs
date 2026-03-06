@@ -20,12 +20,18 @@ public class Counter : MonoBehaviour
         Merge.Merged += OnVeggiesMerged;
     }
 
-    private void OnDestroy() => Merge.Merged -= OnVeggiesMerged;
+    private void OnDestroy()
+    {
+        Merge.Merged -= OnVeggiesMerged;
+    }
+
 
     private void OnVeggiesMerged(int level)
     {
         int pointsToAdd = (level + 1) + (level * 2);
         totalScore += pointsToAdd;
+        totalMergedItems++;
+        Debug.Log($"totalMergedItems {totalMergedItems}");
 
         if (countCoroutine != null) StopCoroutine(countCoroutine);
         countCoroutine = StartCoroutine(AnimateScore(totalScore));
@@ -43,7 +49,7 @@ public class Counter : MonoBehaviour
             scoreText.text = displayedScore.ToString().PadLeft(5, '0');
             yield return null;
         }
-        displayedScore = targetScore;
-        scoreText.text = displayedScore.ToString().PadLeft(5, '0');
+       // displayedScore = targetScore;
+        ///scoreText.text = displayedScore.ToString().PadLeft(5, '0');
     }
 }
