@@ -15,6 +15,7 @@ public class Shaker : MonoBehaviour
     public float duration = 0.2f;
     public float magnitude = 10f;
     public int maxShakes = 5;
+    private bool isShaking = false;
 
     private int currentShakeCount;
     private Vector3 originalPosition;
@@ -36,6 +37,7 @@ public class Shaker : MonoBehaviour
 
     public void OnButtonClick()
     {
+        if (isShaking) {return;}
         UpdateCounter();
         if (currentShakeCount > 0)
         {
@@ -46,8 +48,6 @@ public class Shaker : MonoBehaviour
         else
         {
             MyRewardAdvShow();
-            
-
         }
 
     }
@@ -96,6 +96,7 @@ public class Shaker : MonoBehaviour
 
     IEnumerator Shake()
     {
+        isShaking = true;
         originalPosition = rectTransform.localPosition;
         originalRotation = rectTransform.localRotation;
         
@@ -118,5 +119,6 @@ public class Shaker : MonoBehaviour
 
         rectTransform.localPosition = originalPosition;
         rectTransform.localRotation = originalRotation;
+        isShaking=false;
     }
 }
