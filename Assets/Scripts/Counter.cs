@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using YG;
 
 public class Counter : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class Counter : MonoBehaviour
         int pointsToAdd = (level + 1) + (level * 2);
         totalScore += pointsToAdd;
         totalMergedItems++;
+        if (totalMergedItems % 2 == 0)
+            {
+                YG2.InterstitialAdvShow();
+            }
         Debug.Log($"totalMergedItems {totalMergedItems}");
 
         if (countCoroutine != null) StopCoroutine(countCoroutine);
