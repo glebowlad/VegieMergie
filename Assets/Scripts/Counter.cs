@@ -32,7 +32,7 @@ public class Counter : MonoBehaviour
         int pointsToAdd = (level + 1) + (level * 2);
         totalScore += pointsToAdd;
         totalMergedItems++;
-        if (totalMergedItems % 2 == 0)
+        if (totalMergedItems % 20 == 0)
             {
                 YG2.InterstitialAdvShow();
             }

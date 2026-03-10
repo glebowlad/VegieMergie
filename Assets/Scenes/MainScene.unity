@@ -593,6 +593,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193448619}
   m_CullTransparentMesh: 1
+--- !u!1 &256957966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2935077392093219536, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+  m_PrefabInstance: {fileID: 1247235875534718319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &256957969
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256957966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 26.635193, y: -595.63763}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1664.7902, y: 1083.1012}
+  m_EdgeRadius: 0
 --- !u!1 &291603531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1143,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
@@ -3341,7 +3391,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9a7d3dbadb29c6a4da745a1abeb7b95f, type: 3}
   - {fileID: 8300000, guid: be880bc33d0bfbd40b2245d037d73ae9, type: 3}
   - {fileID: 8300000, guid: 4a1fc03821eabd1498803f76b7eb2bce, type: 3}
-  drag: {fileID: 1944206786}
+  drag: {fileID: 0}
 --- !u!82 &2113414911
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3354,7 +3404,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 79520ef3bed83d04d8e7322aab514913, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3682,6 +3732,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -193
       objectReference: {fileID: 0}
+    - target: {fileID: 2068338264641853819, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Size.x
+      value: 102.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068338264641853819, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Offset.x
+      value: 29.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079117729669507653, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Size.x
+      value: 117.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079117729669507653, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      propertyPath: m_Offset.x
+      value: -30.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2530778235152184037, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       propertyPath: m_Size.x
       value: 598.5296
@@ -3973,6 +4039,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8221359671209315924, guid: a155455976abb894cb03a4a82569f59a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 295881150}
+    - targetCorrespondingSourceObject: {fileID: 2935077392093219536, guid: a155455976abb894cb03a4a82569f59a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 256957969}
   m_SourcePrefab: {fileID: 100100000, guid: a155455976abb894cb03a4a82569f59a, type: 3}
 --- !u!1 &1247235875534718320 stripped
 GameObject:
