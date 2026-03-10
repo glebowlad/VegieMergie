@@ -8,6 +8,9 @@ public class AudioManager : MonoBehaviour
     private AudioClip[] mergeSounds;
     [SerializeField]
     private AudioClip[] dropSounds;
+
+    [SerializeField] 
+    private AudioClip shakeSound;
     [SerializeField]
     private Drag drag;
     private AudioSource source;
@@ -62,6 +65,14 @@ public class AudioManager : MonoBehaviour
         }
         AudioClip randomSound = dropSounds[UnityEngine.Random.Range(0, dropSounds.Length)];
         source.PlayOneShot(randomSound);
+    }
+    public void PlayShakeSound()
+    {
+        if (shakeSound == null )
+        {
+            return;
+        }
+        source.PlayOneShot(shakeSound);
     }
     private void OnDestroy()
     {

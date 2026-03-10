@@ -97,6 +97,7 @@ public class Shaker : MonoBehaviour
     IEnumerator Shake()
     {
         isShaking = true;
+        AudioManager.Instance.PlayShakeSound();
         originalPosition = rectTransform.localPosition;
         originalRotation = rectTransform.localRotation;
         
