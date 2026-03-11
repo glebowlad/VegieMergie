@@ -46,7 +46,7 @@ public class BestScore : MonoBehaviour
         PlayerPrefs.Save();
         ShowBestScore();
     }
-    private void CheckBestScore()
+    public void CheckBestScore()
     {
         int currentScore = Counter.totalScore;
         if (currentScore > bestScore)
