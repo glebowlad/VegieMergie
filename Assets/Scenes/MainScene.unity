@@ -1099,7 +1099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &453721389
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3663,7 +3663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -32.400146, y: 0}
+  m_AnchoredPosition: {x: -32.399902, y: 0}
   m_SizeDelta: {x: 414.25635, y: 150}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &1870864038
@@ -4082,7 +4082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 23.400146, y: 0}
+  m_AnchoredPosition: {x: 23.399902, y: 0}
   m_SizeDelta: {x: 209.56128, y: 100.739075}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &2027674855
@@ -4221,7 +4221,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9a7d3dbadb29c6a4da745a1abeb7b95f, type: 3}
   - {fileID: 8300000, guid: be880bc33d0bfbd40b2245d037d73ae9, type: 3}
   - {fileID: 8300000, guid: 4a1fc03821eabd1498803f76b7eb2bce, type: 3}
-  shakeSound: {fileID: 0}
+  shakeSound: {fileID: 8300000, guid: 8d5209b200e1cb2439f4a66824610a0d, type: 3}
   drag: {fileID: 0}
 --- !u!82 &2113414911
 AudioSource:
