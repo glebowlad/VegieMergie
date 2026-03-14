@@ -55,7 +55,7 @@ public class Vegetable : MonoBehaviour
 
     private IEnumerator CheckGameOver()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         if (gameObject.transform.position.y > gameOverLine.transform.position.y)
         {
             GameOver();
